@@ -1,0 +1,254 @@
+1.) Datatypes
+
+input a , b
+average (a+b) / 2
+
+(a+b) is variable and 2 is constant that remain same 
+
+
+There are 3 Types of Datatypes 
+1.Primtive : int (takes 4bytes - 32 bits - range 0 to 2^32 - 1) , float (size 4 bytes and up to 7 decimal ) , char (Size 1 byte - Store in ASCII) 
+, bool (size 1 byte - True or false) 
+
+
+2. Derived : array , list , pointer , function , reference         	  
+
+3. User Define : class , structure , union , Enum  
+
+
+
+@@@ Basic Code of C++
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int a = 12; #decalration and instalation 
+	cout<<"size of int"<<sizeof(a)<<endl;
+
+	return 0;
+}
+
+
+Types of Mofifers : Signed , Unsigned(if i want only + integer) , Short and Long 
+
+
+
+
+
+2.) Input / output 
+
+
+#include <iostream>				<= Preprocessor declarative used to include files 
+using namespace std;
+
+int main() {					<= This is mandatory code 
+
+	int amt1;
+	cin>>amt1;
+
+	int amt2;
+	cin>>amt2;
+
+
+	int sum = amt1+ amt2;
+	cout<<sum;
+	
+	cout<<"Hello World\n";
+	return 0;				<= this is exit of a function or whole code 
+
+}
+
+
+
+
+
+3.) if / else loop
+
+#includee <iostream>
+using namespace;
+
+int main(){
+
+	int a , b , c;
+	cin>>a>>b>>c;
+
+	if (a>b){
+		if (a>c) {
+			cout<<a<<endl;
+		}
+		else {
+			cout<<c<<endl;
+		}
+	}
+	else {
+		if (b>c){
+			cout<<b<<endl;
+		}
+		else {
+			cout<<c<<endl;
+		}
+	}
+	return 0;
+}
+
+
+
+4.) for 
+
+for(initialisation; condition ; update) {
+//body
+} 
+
+
+while(condition){
+//body
+}
+
+
+
+
+5.) Flow control statement : here there are 2 functions are there break and continue 
+
+>>> Continue is used to skip alteration of loop
+>>> Break is used to terminate the loop
+
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int pocketmoney = 3000;
+    for (int date = 1 ; date<= 30; date++ ){
+        if(date%2==0){
+            continue;
+        }
+        if (pocketmoney==0){
+            break;
+        }
+        cout<<"Go out today"<<endl;
+        pocketmoney=pocketmoney-300;
+        
+        return 0;
+    }
+}
+
+
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a , b;
+    cin>>a>>b;
+
+    for (int num = a; num <= b ; num++ ){
+        int i;
+        for (i = 2; i < num ; i++){
+            if (num%i==0){
+                break;
+            }
+        }
+
+        if(i==num){
+            cout<<num<<endl;
+        }
+    }
+    return 0;
+}
+
+
+
+6.) Operators 
+	-> Binary	+/*-
+	-> Unary	++ --
+
+	i++ 	Post incrementer (This preserver the temporarily value and then executed)
+	++i 	Pre incrementer (Increment instantly)
+
+	
+	Bitwise Operator :
+	& , | , ^ , ~
+
+	    0101		0101	
+	  & 0110	      | 0110
+	-----------	    -----------
+	    0100		0111
+
+	    0101		~ 0101
+	  ^ 0110		--------
+	----------		  1010
+	    0011
+
+
+	Left Shift 
+	4<<1	(0100) -> 1000		a*2^n
+
+	Right Shift
+	4>>1	(0100) -> 0010		a/2^n
+
+
+	Miscellaneous Operator
+	
+	sizeof()  ->  This checks the size of variable	 
+	condition?a:b	->  This is smaller version of if and else operator 
+	cast  ->  convert one data type to another 
+	&     -> This return address of the variable 
+	*     -> Pointer to variable 
+
+
+
+
+7.) Function : Function is a piece of code that perform a specific task 
+
+Syntax of Function 
+
+returnType Functionname (parameter 1 , parameter 2, ....){
+	// Function Body
+}
+
+
+
+8.) Time Complexity : Time complexity is a measure of the amount of computational time an algorithm takes to complete as a function of the length of the input.
+    Space Complexity : The Space complexity depends upon how many variables you have define ,  
+
+	
+9.) Array : Array is list that stores the same datatype data in it.
+	{1,2,3,4}   ,   {'a','b','c','c'}
+	
+>>> Code 
+#include <iostream>
+using namespace std;
+	
+int main(){
+	int array[4] = {1,2,3,4};
+
+	cout<<array[3]<<endl;	
+	
+	return 0;
+}
+
+
+
+#include <iostream>
+using namespace std;
+	
+int main(){
+	int n;
+	cin>>n;
+    
+    int array[n];
+	for(int i = 0 ; i < n ; i++){
+		cin>>array[i];
+	}
+	
+	for(int i = 0 ; i<n ; i++){
+	    cout<<array[i]<<" ";
+	}
+
+	cout<<endl;	
+	
+	return 0;
+}
+
+

@@ -1,0 +1,42 @@
+/*
+Mutex : Mutual Exclusion
+
+Race Condition :
+It happens when two or more thread/process share the same data 
+If there is any race condtion then we have protect the section this is known as race condtion
+
+Mutual Exclusion
+Mutex is used to avoid race condtion this is done by avoid() function
+
+*/
+
+#include <iostream>
+#include <thread>
+#include <mutex>
+using namespace std;
+
+// to solve race condtion we use mutex
+
+int myMoney = 0;
+std::mutex m1;
+
+void addMoney(int myMoney){
+    m1.lock();
+    ++myMoney;
+    m2.unlock();
+}
+
+int main(){
+    // In this code it simultaneously modify the code
+
+    std::thread t1(addMoney);
+    std::thread t2(addMoney);
+
+    t1.join();
+    t2.join();
+
+    cout<<myMoney<<endl;
+
+    return 0;
+
+}

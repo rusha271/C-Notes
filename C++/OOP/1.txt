@@ -1,0 +1,589 @@
+🧑‍💻🧑‍💻🧑‍💻
+#include <iostream>
+using namespace std;
+
+// this is blue print of any code that is reuseable
+// there is acess modifier in which the companents are acessable (private , public , protected)
+
+class Employee {
+public :
+    string Name;
+    string Company;
+    int Age;
+
+    void introYour(){
+        cout << "Name - " << Name <<endl;
+        cout << "Company - " << Company <<endl;
+        cout << "Age - " << Age <<endl;
+    }
+    Employee(string Name , string Company , int Age){
+        Name = Name;
+        Company = Company;
+        Age = Age;
+    }
+
+}
+
+
+int main (){
+
+    Employee emp1 = Employee("Rushabh","TCS",21);
+    emp1.introYour();
+}
+
+
+
+/* 
+Constructor : a special function that's automatically called when an object of a class is created
+Default Constructor : a constructor that can be called without arguments, or that has default values for all its parameters
+
+Constructor has 3 rules : name of constructor should be based on class name , constructor has to be return type , 
+                          constructor must be public or private. 
+*/
+
+
+
+
+
+🧑‍💻🧑‍💻🧑‍💻
+/* Encapuslation : combining similar data and functions into a single unit called a class.
+use of this property is that without changeing any 
+
+
+#include <iostream>
+using namespace std;
+
+class Employee {
+// this is unascessabel by other function so we use setter and getter
+private:
+    string Name;
+    string Company;
+    int Age;
+
+
+public :
+    void setName(String name){
+        Name = name;
+    }
+
+    void getName(){
+        return Name;
+    }
+
+    void setCompany(String comapny){
+        Company = comapny;
+    }
+
+    void getCompany(){
+        return Company;
+    }
+
+    void setAge(int age){
+        if (age >= 18){
+            Age = age;
+        }
+    }
+
+    void getAge(){
+        return Age;
+    }
+
+    void introYour(){
+        cout << "Name - " << getName <<endl;
+        cout << "Company - " << getCompany <<endl;
+        cout << "Age - " << getAge <<endl;
+    }
+    Employee(string name , string company , int age){
+        Name = name;
+        Company = company;
+        Age = age;
+    }
+
+}
+
+
+int main (){
+
+    Employee emp1 = Employee("Rushabh","TCS",21);
+    emp1.introYour();
+    emp1.setAge(39);     // this function is ascessabel
+    // emp1.Age(39)         this will throw error
+    cout<<"Age of the Man is : "<<emp1.getAge();
+}
+
+
+
+
+
+
+
+🧑‍💻🧑‍💻🧑‍💻
+// Abstraction : a programming technique that involves hiding unnecessary details and displaying only the essential information
+
+
+#include <iostream>
+using namespace std;
+
+class AbstractEmployee{
+    virtual void AskForPromotion()=0
+}
+
+
+class Employee : AbstractEmployee{
+
+private:
+    string Name;
+    string Company;
+    int Age;
+
+
+public :
+    void setName(String name){
+        Name = name;
+    }
+
+    void getName(){
+        return Name;
+    }
+
+    void setCompany(String comapny){
+        Company = comapny;
+    }
+
+    void getCompany(){
+        return Company;
+    }
+
+    void setAge(int age){
+        if (age >= 18){
+            Age = age;
+        }
+    }
+
+    void getAge(){
+        return Age;
+    }
+
+    void AskForPromotion(){
+        if(Age>=30){
+            cout<<Name<<"Promoted"<<endl;
+        }
+        else{
+            cout<<Name<<" no promation"<<endl;
+        }
+    }
+
+
+
+    void introYour(){
+        cout << "Name - " << Name <<endl;
+        cout << "Company - " << Company <<endl;
+        cout << "Age - " << Age <<endl;
+    }
+    Employee(string name , string company , int age){
+        Name = name;
+        Company = company;
+        Age = age;
+    }
+
+}
+
+
+int main (){
+
+    Employee emp1 = Employee("Rushabh","TCS",21);
+    emp1.introYour();
+    emp1.setAge(39);     // this function is ascessabel
+    // emp1.Age(39)         this will throw error
+    cout<<"Age of the Man is : "<<emp1.getAge();
+}
+
+
+
+
+
+🧑‍💻🧑‍💻🧑‍💻
+// Inheritance : a mechanism of reusing and extending existing classes without modifying them, 
+                 thus producing hierarchical relationships between them
+
+
+
+#include <iostream>
+using namespace std;
+
+class AbstractEmployee{
+    virtual void AskForPromotion()=0
+}
+
+
+class Employee : AbstractEmployee{
+
+private:
+    string Name;
+    string Company;
+    int Age;
+
+
+public :
+    void setName(String name){
+        Name = name;
+    }
+
+    void getName(){
+        return Name;
+    }
+
+    void setCompany(String comapny){
+        Company = comapny;
+    }
+
+    void getCompany(){
+        return Company;
+    }
+
+    void setAge(int age){
+        if (age >= 18){
+            Age = age;
+        }
+    }
+
+    void getAge(){
+        return Age;
+    }
+
+    void AskForPromotion(){
+        if(Age>=30){
+            cout<<Name<<"Promoted"<<endl;
+        }
+        else{
+            cout<<Name<<" no promation"<<endl;
+        }
+    }
+
+
+
+    void introYour(){
+        cout << "Name - " << Name <<endl;
+        cout << "Company - " << Company <<endl;
+        cout << "Age - " << Age <<endl;
+    }
+
+    //constructor
+    Employee(string name , string company , int age){
+        Name = name;
+        Company = company;
+        Age = age;
+    }
+
+};
+
+class Developer: public Employee{
+public:
+    String FavProg;
+    Developer(string Name , string Company , int Age, String favProg):Employee(name,comapny,age){
+        FavProg = favProg;
+    }
+    void FixBug(){
+        cout<<getName<<" fixed bug using "<<FavProg<<endl;
+    }
+
+
+};
+
+
+int main (){
+
+    Developer d = Developer("Rushabh","TCS",21,"C++");
+    d.FixBug();
+}
+
+
+
+
+
+🧑‍💻🧑‍💻🧑‍💻
+// Polymorphism : a concept in C++ that allows an object to have multiple forms or representations, 
+                  and to perform actions in different ways.
+
+
+#include <iostream>
+using namespace std;
+
+class AbstractEmployee{
+    virtual void AskForPromotion()=0
+}
+
+
+class Employee : AbstractEmployee{
+
+private:
+    string Name;
+    string Company;
+    int Age;
+
+
+public :
+    void setName(String name){
+        Name = name;
+    }
+
+    void getName(){
+        return Name;
+    }
+
+    void setCompany(String comapny){
+        Company = comapny;
+    }
+
+    void getCompany(){
+        return Company;
+    }
+
+    void setAge(int age){
+        if (age >= 18){
+            Age = age;
+        }
+    }
+
+    void getAge(){
+        return Age;
+    }
+
+    void AskForPromotion(){
+        if(Age>=30){
+            cout<<Name<<"Promoted"<<endl;
+        }
+        else{
+            cout<<Name<<" no promation"<<endl;
+        }
+    }
+
+
+
+    void introYour(){
+        cout << "Name - " << Name <<endl;
+        cout << "Company - " << Company <<endl;
+        cout << "Age - " << Age <<endl;
+    }
+
+    //constructor
+    Employee(string name , string company , int age){
+        Name = name;
+        Company = company;
+        Age = age;
+    }
+
+    virtual void work(){
+        cout<<getName<<" checking email , task backlog check , doing work... "<<endl; 
+    }
+
+};
+
+class Developer: public Employee{
+public:
+    String FavProg;
+    Developer(string Name , string Company , int Age, String favProg):Employee(name,comapny,age){
+        FavProg = favProg;
+    }
+    void FixBug(){
+        cout<<getName<<" fixed bug using "<<FavProg<<endl;
+    }
+    void work(){
+        cout<<getName<<" writting code in there fav programming in "<<FavProg<<endl; 
+    }
+
+};
+
+
+int main (){
+
+    Employee e1 = Employee("Dev","TCS",25);
+    Developer d = Developer("Rushabh","TCS",21,"C++");
+
+    e1.work();      //Dev checking email , task backlog check , doing work... 
+    d.work();       //Rushabh writting code in there fav programming in C++
+    
+}
+
+
+
+
+
+
+
+
+
+
+1. Coupling:
+Coupling refers to the degree of direct knowledge one class has of another.
+High coupling means classes are closely linked (changes in one affect others).
+Low coupling means classes interact but have minimal dependencies.
+
+#include <iostream>
+using namespace std;
+
+// High Coupling Example
+class Engine {
+public:
+    void start() {
+        cout << "Engine started." << endl;
+    }
+};
+
+class Car {
+public:
+    Engine engine; // Car directly uses Engine
+
+    void startCar() {
+        engine.start(); // High coupling between Car and Engine
+    }
+};
+
+int main() {
+    Car car;
+    car.startCar();
+    return 0;
+}
+
+
+
+
+2. Cohesion:
+Cohesion refers to how closely the functions in a single class are related.
+High cohesion is when class methods serve a single, clear purpose.
+
+#include <iostream>
+using namespace std;
+
+// High Cohesion Example
+class Calculator {
+public:
+    int add(int a, int b) {
+        return a + b;
+    }
+    int subtract(int a, int b) {
+        return a - b;
+    }
+};
+
+int main() {
+    Calculator calc;
+    cout << "Addition: " << calc.add(5, 3) << endl;
+    cout << "Subtraction: " << calc.subtract(5, 3) << endl;
+    return 0;
+}
+
+
+
+
+3. Association:
+Association is when two classes are related but independent of each other.
+
+#include <iostream>
+using namespace std;
+
+// Association Example
+class Teacher {
+public:
+    void teach() {
+        cout << "Teaching..." << endl;
+    }
+};
+
+class Student {
+public:
+    void learn() {
+        cout << "Learning..." << endl;
+    }
+};
+
+int main() {
+    Teacher teacher;
+    Student student;
+
+    teacher.teach(); // Teacher and Student are independent but can interact
+    student.learn();
+    return 0;
+}
+
+
+
+
+4. Aggregation:
+Aggregation represents a "whole-part" relationship where the part (child) can exist independently of the whole (parent).
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Department {
+public:
+    string name;
+    Department(string name) : name(name) {}
+};
+
+class University {
+public:
+    string name;
+    vector<Department> departments;
+
+    University(string name) : name(name) {}
+
+    void addDepartment(Department dept) {
+        departments.push_back(dept);
+    }
+
+    void displayDepartments() {
+        cout << "Departments in " << name << ":" << endl;
+        for (auto &dept : departments) {
+            cout << dept.name << endl;
+        }
+    }
+};
+
+int main() {
+    University uni("Tech University");
+    Department cs("Computer Science");
+    Department ee("Electrical Engineering");
+
+    uni.addDepartment(cs);
+    uni.addDepartment(ee);
+
+    uni.displayDepartments();
+    return 0;
+}
+
+
+
+
+
+5. Composition:
+Composition is a strong form of aggregation where the part cannot exist without the whole.
+
+
+
+#include <iostream>
+using namespace std;
+
+class Heart {
+public:
+    void beat() {
+        cout << "Heart is beating." << endl;
+    }
+};
+
+class Human {
+private:
+    Heart heart; // Composition: Heart cannot exist without Human
+
+public:
+    void live() {
+        heart.beat(); // Human controls Heart
+    }
+};
+
+int main() {
+    Human human;
+    human.live(); // Human's life depends on Heart
+    return 0;
+}

@@ -1,0 +1,85 @@
+// Function calls itself 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void f(String s , int n){
+    for(int i = 0 ; i < 0 ; i++){
+        cout<<s;
+        if(i == n){
+            return;
+        }
+    }
+}
+
+int main(){
+    String s;
+    cin>>s;
+
+    int n;
+    cin>>n;
+
+    f(s,n)<<endl;
+
+    return 0;
+}
+
+
+🧑‍💻🧑‍💻🧑‍💻
+Problem 1 : print 1 to N
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void rec_f(int i , int n){
+    if(i>n){
+        return;
+    }
+    cout<<i<<" ";
+    rec_f(i+1,n);
+}
+
+int main(){
+
+    int n;
+    cout<<"Enter a number till you want to print"<<endl;
+    cin>>n;
+
+    rec_f(1,n);
+
+
+    return 0;
+}
+
+
+🧑‍💻🧑‍💻🧑‍💻
+Problem 2 : Print from N to 1 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void rec_f(int i , int n){
+    if(i<1){
+        return;
+    }
+    cout<<i<<" ";
+    rec_f(i-1,n);
+}
+
+int main(){
+
+    int n;
+    cout<<"Enter a number till you want to print"<<endl;
+    cin>>n;
+
+    rec_f(n,n);
+
+
+    return 0;
+}
+
+
+
+🧑‍💻🧑‍💻🧑‍💻
+Problem 3 : Print 1 to N (no use of -1 / +1)
+

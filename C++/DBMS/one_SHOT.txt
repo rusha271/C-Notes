@@ -1,0 +1,71 @@
+Chapter 1 
+    🤩
+    Data : Means nothing meaning store in computer in the form collection of bits/bytes
+
+    Informations : data has meaning and process in the computer to interpert
+    
+    DBMS : It is set of irrealtive data store and code to access that data (Create Read Update Delete)
+
+
+    DBMS vs File System 
+    🧑‍💻 Data Storage : DBMS stores data in a structured way with relationships between tables, while the file system stores 
+                      data in unstructured files.
+    🧑‍💻 Data Integrity: DBMS ensures data integrity through ACID properties, whereas the file system lacks built-in integrity 
+                       constraints.
+    🧑‍💻 Data Security: DBMS offers robust security features like user authentication and access control; 
+                      the file system provides limited security options.
+
+
+    🤷‍♂️
+    Note :
+    ACID : ACID keeps data safe, organized, and correct, like making sure toys are always handled properly in a toy box.
+    Atomicity Consistency Isolation and Durability
+
+
+
+Chapter 2 
+    🤩
+    Abstraction : It is the process of hiding complex implementation details and exposing only the essential functionalities 
+                  to the user. For example, a car allows you to drive without understanding its internal mechanics.
+
+    View : Table whose rows are not explicitly stored, a view is a virtual table based on the result-set of an SQL statement.
+
+    Schema : Nothing but desgin of table columns (Name , Phone , Address , Height , Weight , IBM , etc) / overall design.
+  
+    Instance of DB : What information is stored at paticular moment of time.
+
+
+    🤷‍♂️
+    What is meaning of all above defination ? 
+    => Suppose you are working in amazon as DBMS engg and logistic department wants - (Name , Address , Phone No) & 
+        Customer Service wanst - (Name , Address , Phone , Product Details).  
+        
+        Abstraction + View = Hiding the irrealtive data and craete the virtual table by using view to diaply the paticular data.
+
+
+    🧑‍💻 There are 3 levels of Data is Store and Retrive means inshort viewing of data.
+
+        a. Physical Level : This is lowest level of abstraction , it means how the data is store in physical storage and end goal is 
+                            by using algo that allows effcient "access" to data.
+
+        b. Logical Level (DB Schema) : It is conceptual view means what the data is and relationships btw other data and DBA decide what the data is been shown and what not.
+
+        c. View Level (Subschema): Highest Level of abstraction and end goal is to show the realtive data to user.
+
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://youtu.be/dl00fOOYLOM?feature=shared <- Link From Where I Learn DBMS.

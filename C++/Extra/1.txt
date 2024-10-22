@@ -1,0 +1,40 @@
+1.) Call by value / reference
+
+A) Call by Value : A copy of value is passed to the function 
+
+
+void modifyValue(int x) {
+    x = x + 10;
+}
+
+int main() {
+    int a = 5;
+    modifyValue(a);
+    std::cout << a;  // Output: 5
+    return 0;
+}
+
+
+B) Call by Reference : A reference to the actual variable is passed to the function.
+
+
+void modifyValue(int &x) {
+    x = x + 10;
+}
+
+int main() {
+    int a = 5;
+    modifyValue(a);
+    std::cout << a;  // Output: 15
+    return 0;
+}
+
+
+
+
+
+
+
+2.) Friend Function : 
+
+Friend function is not the member of class and define outside the class but still can acess the function 

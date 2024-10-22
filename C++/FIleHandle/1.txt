@@ -1,0 +1,48 @@
+#include <iostream> 
+#include <fstream>
+#include <string>
+using namespace std;
+
+
+int main(){
+
+    fstream myFile;
+    // has two parameter file name and open mode
+    myFile.open("saldina.txt",ios::out);            // this is write mode   
+    if(myFile.is_open()){
+        myFile << "Hello /n";
+        myFile << "This is second line /n";
+        myFile.close();
+    } 
+
+    myFile.open("saldina.txt",ios::app)     // this is append mode 
+    if(myFile.is_open()){
+        myFile << "Hello2 /n";
+        myFile.close();
+    }
+
+
+    // reading file 
+    myFile.open("saldina.txt",ios::in)      // read mode
+    if(myFile.is_open()){
+        String line;
+        while(getLine(myFile,line)){
+            cout<<line<<endl;
+        }
+
+        myFile.close();
+    }
+
+
+    return 0;
+}
+
+
+
+
+
+// converting any charcter to ASCII
+
+int('a')        // output : 97
+char(97)        // output : a
+
